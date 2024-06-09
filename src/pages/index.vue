@@ -2,7 +2,9 @@
   <div class="page">
     <BasicLayout>
       <div class="page_container">
-        <section class="page_container_navigation"></section>
+        <section class="page_container_navigation">
+          <Navigation />
+        </section>
         <section class="page_container_notice"></section>
       </div>
     </BasicLayout>
@@ -11,6 +13,7 @@
 
 <script setup lang="ts">
 import BasicLayout from '@components/atoms/layout/BasicLayout.vue';
+import Navigation from '@components/organisms/Navigation.vue';
 </script>
 
 <style lang="scss" scoped>
