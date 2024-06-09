@@ -4,4 +4,8 @@
 
 <script setup lang="ts" />
 
-<style scoped />
+<style>
+body {
+  margin: 0px;
+}
+</style>
