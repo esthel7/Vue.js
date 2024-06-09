@@ -1,5 +1,5 @@
 <template>
-  <BasicLayout>
+  <BasicLayout :theme="'blue'">
     <div class="navigation">
       <div class="navigation_sub-menu">
         <div class="navigation_sub-menu_button-box"></div>

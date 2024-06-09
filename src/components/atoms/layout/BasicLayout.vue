@@ -1,5 +1,5 @@
 <template>
-  <div class="basic-layout">
+  <div class="basic-layout" :layout-theme="theme">
     <slot />
   </div>
 </template>
@@ -23,5 +23,9 @@ const { theme } = toRefs(props);
   padding: 20px;
   background-color: $color-white-000;
   border-radius: 24px;
+
+  &[layout-theme='blue'] {
+    background-color: $color-blue-000;
+  }
 }
 </style>
