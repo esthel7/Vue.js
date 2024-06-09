@@ -2,6 +2,6 @@
   <div>TEST</div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts" />
 
-<style scoped></style>
+<style scoped />
