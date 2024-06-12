@@ -1,15 +1,29 @@
 <template>
   <div class="bar-chart">
     <div class="bar-chart_container">
-      <span class="bar-chart_container_value">89%</span>
+      <span class="bar-chart_container_value">{{ data }}%</span>
       <div class="bar-chart_container_base">
-        <div class="gauge" />
+        <div v-if="data >= 80" class="gauge" :style="{ width: data + '%' }" />
+        <div
+          v-else
+          class="gauge"
+          :style="{ width: data + '%', backgroundColor: '#D92D20' }"
+        />
       </div>
     </div>
   </div>
 </template>
 
-<script setup lagn="ts"></script>
+<script setup lang="ts">
+import { toRefs } from 'vue';
+
+interface Props {
+  data: number;
+}
+
+const props = defineProps<Props>();
+const { data } = toRefs(props);
+</script>
 
 <style lang="scss" scoped>
 .bar-chart {
