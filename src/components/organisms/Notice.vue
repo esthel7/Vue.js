@@ -28,12 +28,25 @@
         <span class="label">Skill Match</span>
         <span class="label">Skill</span>
       </div>
-      <div class="notice_body_list-box"></div>
+      <div class="notice_body_list-box">
+        <NoticeList />
+        <NoticeList />
+        <NoticeList />
+        <NoticeList />
+        <NoticeList />
+        <NoticeList />
+        <NoticeList />
+        <NoticeList />
+        <NoticeList />
+        <NoticeList />
+      </div>
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import NoticeList from '@components/mocules/List.vue';
+</script>
 
 <style lang="scss" scoped>
 .notice {
@@ -121,7 +134,7 @@
       flex-direction: column;
       justify-content: flex-start;
       width: 100%;
-      height: calc(100% - 110px);
+      height: calc(100% - 92px);
       gap: 12px;
       overflow-y: scroll;
     }
