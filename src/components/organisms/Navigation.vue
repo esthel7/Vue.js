@@ -41,8 +41,8 @@ const menu = [
     label: 'Dashboard',
   },
   {
-    icon: 'Indox',
-    label: 'Indox',
+    icon: 'Index',
+    label: 'Index',
   },
   {
     icon: 'Calendar',
