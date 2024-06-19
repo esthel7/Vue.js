@@ -20,9 +20,8 @@ const { theme } = toRefs(props);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
   background-color: $color-white-000;
-  border-radius: 24px;
+  border-radius: 5px;
 
   &[layout-theme='blue'] {
     background-color: $color-blue-000;
