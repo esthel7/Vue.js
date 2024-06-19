@@ -32,50 +32,50 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import BasicLayout from '@components/atoms/layout/BasicLayout.vue';
 import BasicButton from '@components/atoms/button/BasicButton.vue';
+import BasicLayout from '@components/atoms/layout/BasicLayout.vue';
 
 const menu = [
   {
     icon: 'Dashboard',
-    label: 'Dashboard',
+    label: 'Dashboard'
   },
   {
     icon: 'Index',
-    label: 'Index',
+    label: 'Index'
   },
   {
     icon: 'Calendar',
-    label: 'Calendar',
+    label: 'Calendar'
   },
   {
     icon: 'Jobs',
-    label: 'Jobs',
+    label: 'Jobs'
   },
   {
     icon: 'Reference',
-    label: 'Reference',
+    label: 'Reference'
   },
   {
     icon: 'Document',
-    label: 'Document',
+    label: 'Document'
   },
   {
     icon: 'CareerSite',
-    label: 'CareerSite',
+    label: 'CareerSite'
   },
   {
     icon: 'Employee',
-    label: 'Employee',
+    label: 'Employee'
   },
   {
     icon: 'Structure',
-    label: 'Structure',
+    label: 'Structure'
   },
   {
     icon: 'Settings',
-    label: 'Settings',
-  },
+    label: 'Settings'
+  }
 ];
 
 const topMenu = computed(() => menu.slice(0, 3));

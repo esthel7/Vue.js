@@ -1,6 +1,10 @@
 <template>
   <div class="basic-button">
-    <img :src="`src/assets/icons/${data.icon}.svg`" alt="" class="basic-button_icon" />
+    <img
+      :src="`src/assets/icons/${data.icon}.svg`"
+      alt=""
+      class="basic-button_icon"
+    />
     <span class="basic-button_label">{{ data.label }}</span>
   </div>
 </template>
