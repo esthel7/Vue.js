@@ -32,8 +32,9 @@ import Notice from '@components/organisms/Notice.vue';
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 70vw;
-    height: 70vh;
+    padding: 20px;
+    width: 95vw;
+    height: 95vh;
 
     &_navigation {
       width: 20%;

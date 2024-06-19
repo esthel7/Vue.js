@@ -2,7 +2,7 @@
   <div class="notice">
     <div class="notice_header">
       <div class="notice_header_total">
-        <span class="count">142</span>
+        <span class="count">{{ candidate.length }}</span>
         <span class="label">Candidates</span>
       </div>
       <div class="notice_header_info">
@@ -93,7 +93,7 @@ onMounted(() => {
   justify-content: center;
   width: calc(100% - 36px);
   height: 100%;
-  padding: 0 12px 0 24px;
+  margin-left: auto;
 
   &_header {
     display: flex;

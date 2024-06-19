@@ -27,10 +27,10 @@
 <script setup lang="ts">
 import { toRefs } from 'vue';
 import BarChart from '@components/atoms/chart/BarChart.vue';
-import { List } from '@components/organisms/Notice.vue';
+import { Candidate } from '@constants';
 
 interface Props {
-  data: List;
+  data: Candidate;
 }
 
 const props = defineProps<Props>();
@@ -41,7 +41,7 @@ const { data } = toRefs(props);
 .list {
   display: flex;
   align-items: center;
-  width: calc(100% - 32px);
+  width: 100%;
   height: 72px;
   min-height: 72px;
   padding: 0 16px;
