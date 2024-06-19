@@ -5,11 +5,11 @@ import { defineConfig } from 'vite';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
+  base: './',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
       '@apis': fileURLToPath(new URL('./src/apis', import.meta.url)),
-      '@assets': fileURLToPath(new URL('./src/assets', import.meta.url)),
       '@components': fileURLToPath(
         new URL('./src/components', import.meta.url)
       ),
@@ -21,7 +21,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: '@import "./src/assets/styles/main.scss";'
+        additionalData: '@import "./src/styles/main.scss";'
       }
     }
   }

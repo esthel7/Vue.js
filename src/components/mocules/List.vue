@@ -1,11 +1,7 @@
 <template>
   <div class="list">
     <div class="list_avatar">
-      <img
-        class="list_avatar_image"
-        src="/src/assets/images/user-01.png"
-        alt=""
-      />
+      <img class="list_avatar_image" src="/assets/images/user-01.png" alt="" />
       <div class="list_avatar_text-box">
         <span class="name">{{ data.userName }}</span>
         <span class="duty">{{ data.userRole }}</span>

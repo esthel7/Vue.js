@@ -1,7 +1,7 @@
 <template>
   <div class="basic-button">
     <img
-      :src="`src/assets/icons/${data.icon}.svg`"
+      :src="`/assets/icons/${data.icon}.svg`"
       alt=""
       class="basic-button_icon"
     />

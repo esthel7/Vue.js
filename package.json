@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
+    "*.{ts,tsx,vue,json,scss}": [
       "prettier --write"
     ]
   },
