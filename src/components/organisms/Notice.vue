@@ -46,16 +46,9 @@
 import { onMounted, ref, watch } from 'vue';
 import NoticeList from '@components/mocules/List.vue';
 import Pagination from '@components/mocules/common/Pagination.vue';
+import { Candidate, candidate } from '@constants';
 
-export interface List {
-  userName: string;
-  userRole: string;
-  userResumeScore: number;
-  userSkillMatch: number;
-  userSkill: string;
-}
-
-const tableData = ref<Array<List>>([]);
+const tableData = ref<Array<Candidate>>([]);
 const selectedPage = ref<number>(1);
 const totalPage = ref<number>(0);
 const totalCount = ref<number | undefined>();
@@ -66,7 +59,7 @@ const reset = (pageIdx: number) => {
   else selectedPage.value = pageIdx;
 };
 
-const disassemble = (index: number, data: Array<List>, size: number) => {
+const disassemble = (index: number, data: Array<Candidate>, size: number) => {
   const res = new Array();
   for (let i = 0; i < data.length; i += size) {
     res.push(data.slice(i, i + size));
@@ -75,165 +68,12 @@ const disassemble = (index: number, data: Array<List>, size: number) => {
 };
 
 const getData = () => {
-  tableData.value = [
-    {
-      userName: 'Marco',
-      userRole: 'FrontEnd Developer',
-      userResumeScore: 89,
-      userSkillMatch: 80,
-      userSkill: 'Junior'
-    },
-    {
-      userName: 'Jeff',
-      userRole: 'BackEnd Developer',
-      userResumeScore: 72,
-      userSkillMatch: 65,
-      userSkill: 'Senior'
-    },
-    {
-      userName: 'Eric',
-      userRole: 'User Experience',
-      userResumeScore: 90,
-      userSkillMatch: 91,
-      userSkill: 'Senior'
-    },
-    {
-      userName: 'Merry',
-      userRole: 'User Interface',
-      userResumeScore: 56,
-      userSkillMatch: 43,
-      userSkill: 'Junior'
-    },
-    {
-      userName: 'John',
-      userRole: 'Project Manager',
-      userResumeScore: 100,
-      userSkillMatch: 100,
-      userSkill: 'Senior'
-    },
-    {
-      userName: 'Maxwell',
-      userRole: 'FrontEnd Developer',
-      userResumeScore: 50,
-      userSkillMatch: 50,
-      userSkill: 'Junior'
-    },
-    {
-      userName: 'Poloe',
-      userRole: 'BackEnd Developer',
-      userResumeScore: 80,
-      userSkillMatch: 76,
-      userSkill: 'Senior'
-    },
-    {
-      userName: 'Marco2',
-      userRole: 'FrontEnd Developer',
-      userResumeScore: 89,
-      userSkillMatch: 80,
-      userSkill: 'Junior'
-    },
-    {
-      userName: 'Jeff2',
-      userRole: 'BackEnd Developer',
-      userResumeScore: 72,
-      userSkillMatch: 65,
-      userSkill: 'Senior'
-    },
-    {
-      userName: 'Eric2',
-      userRole: 'User Experience',
-      userResumeScore: 90,
-      userSkillMatch: 91,
-      userSkill: 'Senior'
-    },
-    {
-      userName: 'Merry2',
-      userRole: 'User Interface',
-      userResumeScore: 56,
-      userSkillMatch: 43,
-      userSkill: 'Junior'
-    },
-    {
-      userName: 'John2',
-      userRole: 'Project Manager',
-      userResumeScore: 100,
-      userSkillMatch: 100,
-      userSkill: 'Senior'
-    },
-    {
-      userName: 'Maxwell2',
-      userRole: 'FrontEnd Developer',
-      userResumeScore: 50,
-      userSkillMatch: 50,
-      userSkill: 'Junior'
-    },
-    {
-      userName: 'Poloe2',
-      userRole: 'BackEnd Developer',
-      userResumeScore: 80,
-      userSkillMatch: 76,
-      userSkill: 'Senior'
-    },
-    {
-      userName: 'Marco3',
-      userRole: 'FrontEnd Developer',
-      userResumeScore: 89,
-      userSkillMatch: 80,
-      userSkill: 'Junior'
-    },
-    {
-      userName: 'Jeff3',
-      userRole: 'BackEnd Developer',
-      userResumeScore: 72,
-      userSkillMatch: 65,
-      userSkill: 'Senior'
-    },
-    {
-      userName: 'Eric3',
-      userRole: 'User Experience',
-      userResumeScore: 90,
-      userSkillMatch: 91,
-      userSkill: 'Senior'
-    },
-    {
-      userName: 'Merry3',
-      userRole: 'User Interface',
-      userResumeScore: 56,
-      userSkillMatch: 43,
-      userSkill: 'Junior'
-    },
-    {
-      userName: 'John3',
-      userRole: 'Project Manager',
-      userResumeScore: 100,
-      userSkillMatch: 100,
-      userSkill: 'Senior'
-    },
-    {
-      userName: 'Maxwell3',
-      userRole: 'FrontEnd Developer',
-      userResumeScore: 50,
-      userSkillMatch: 50,
-      userSkill: 'Junior'
-    },
-    {
-      userName: 'Poloe3',
-      userRole: 'BackEnd Developer',
-      userResumeScore: 80,
-      userSkillMatch: 76,
-      userSkill: 'Senior'
-    }
-  ];
-  totalCount.value = tableData.value !== undefined ? tableData.value.length : 0;
+  totalCount.value = candidate !== undefined ? candidate.length : 0;
   totalPage.value =
     Math.ceil(totalCount.value / limit.value) !== 0
       ? Math.ceil(totalCount.value / limit.value)
       : 1;
-  tableData.value = disassemble(
-    selectedPage.value - 1,
-    tableData.value,
-    limit.value
-  );
+  tableData.value = disassemble(selectedPage.value - 1, candidate, limit.value);
 };
 
 watch(selectedPage, () => {

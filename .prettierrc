@@ -17,6 +17,8 @@
     "^@pages/(.*)$",
     "^@components",
     "^@components/(.*)$",
+    "^@constants",
+    "^@constants/(.*)$",
     "^[./]"
   ],
   "importOrderSeparation": false,
