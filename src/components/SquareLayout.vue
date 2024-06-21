@@ -42,5 +42,13 @@ const { theme } = toRefs(props);
     background-color: rgba($color-white-200, 0.1);
     border-radius: 16px;
   }
+
+  &[layout-theme='jobCandidate'] {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: $color-gray-200;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
 }
 </style>
