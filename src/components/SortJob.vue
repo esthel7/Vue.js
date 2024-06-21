@@ -8,7 +8,9 @@
           <div class="sort-job_text-box_detail name">
             {{ data.userName }}
           </div>
-          <div class="sort-job_text-box_detail">{{ data.userSkill }}</div>
+          <div class="sort-job_text-box_detail skill">
+            <Badge :userSkill="data.userSkill" />
+          </div>
         </div>
       </SquareLayout>
     </div>
@@ -17,7 +19,7 @@
 
 <script setup lang="ts">
 import { toRefs } from 'vue';
-import { SquareLayout } from '@components';
+import { Badge, SquareLayout } from '@components';
 import { Candidate, candidate, roles } from '@constants';
 
 interface Props {
@@ -64,18 +66,24 @@ if (sort.value && roles.includes(sort.value)) {
     padding: 5px 10px;
 
     &_detail {
-      overflow: hidden;
-      white-space: normal;
-      word-wrap: break-word;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
+      display: flex;
       margin: auto 0;
 
       &.name {
+        text-align: right;
         font-size: 20px;
         font-weight: bold;
+        overflow: hidden;
+        white-space: normal;
+        word-wrap: break-word;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+      }
+
+      &.skill {
+        margin-left: auto;
       }
     }
   }

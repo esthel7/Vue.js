@@ -14,19 +14,14 @@
       <BarChart :data="data.userSkillMatch" />
     </div>
     <div class="item">
-      <div v-if="data.userSkill === 'Senior'" class="item_chip">
-        {{ data.userSkill }}
-      </div>
-      <div v-if="data.userSkill === 'Junior'" class="item_chip junior">
-        {{ data.userSkill }}
-      </div>
+      <Badge :userSkill="data.userSkill" />
     </div>
   </SquareLayout>
 </template>
 
 <script setup lang="ts">
 import { toRefs } from 'vue';
-import { BarChart, SquareLayout } from '@components';
+import { Badge, BarChart, SquareLayout } from '@components';
 import { Candidate } from '@constants';
 
 interface Props {
@@ -71,20 +66,5 @@ const { data } = toRefs(props);
 
 .item {
   width: 25%;
-
-  &_chip {
-    @include flex-center;
-    width: 60px;
-    height: 12px;
-    padding: 8px;
-    color: $color-blue-000;
-    background-color: rgba($color-blue-000, 0.1);
-    border-radius: 12px;
-
-    &.junior {
-      color: orange;
-      background-color: rgba(orange, 0.1);
-    }
-  }
 }
 </style>
