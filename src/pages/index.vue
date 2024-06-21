@@ -14,9 +14,9 @@
 </template>
 
 <script setup lang="ts">
-import SquareLayout from '@components/atoms/layout/SquareLayout.vue';
-import CandidateBox from '@components/organisms/CandidateBox.vue';
-import Navigation from '@components/organisms/Navigation.vue';
+import CandidateBox from '@components/CandidateBox.vue';
+import Navigation from '@components/Navigation.vue';
+import SquareLayout from '@components/SquareLayout.vue';
 </script>
 
 <style lang="scss" scoped>
