@@ -19,17 +19,13 @@ import { Navigation, SquareLayout } from '@components';
 
 <style lang="scss" scoped>
 .basic-layout {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center;
   width: 100%;
   height: 100vh;
   background-color: $color-black-900;
 
   &_container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center;
     padding: 20px;
     width: 95vw;
     height: 95vh;

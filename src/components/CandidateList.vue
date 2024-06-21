@@ -73,9 +73,7 @@ const { data } = toRefs(props);
   width: 25%;
 
   &_chip {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center;
     width: 60px;
     height: 12px;
     padding: 8px;

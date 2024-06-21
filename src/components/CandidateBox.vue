@@ -86,10 +86,8 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .box {
-  display: flex;
+  @include flex-center;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   width: calc(100% - 36px);
   height: 100%;
   margin-left: auto;
