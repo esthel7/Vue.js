@@ -5,8 +5,8 @@
         <section class="page_container_navigation">
           <Navigation />
         </section>
-        <section class="page_container_notice">
-          <Notice />
+        <section class="page_container_candidate">
+          <CandidateBox />
         </section>
       </div>
     </SquareLayout>
@@ -15,8 +15,8 @@
 
 <script setup lang="ts">
 import SquareLayout from '@components/atoms/layout/SquareLayout.vue';
+import CandidateBox from '@components/organisms/CandidateBox.vue';
 import Navigation from '@components/organisms/Navigation.vue';
-import Notice from '@components/organisms/Notice.vue';
 </script>
 
 <style lang="scss" scoped>
@@ -41,7 +41,7 @@ import Notice from '@components/organisms/Notice.vue';
       height: 100%;
     }
 
-    &_notice {
+    &_candidate {
       width: 80%;
       height: 100%;
     }
