@@ -1,11 +1,11 @@
 <template>
-  <div class="notice">
-    <div class="notice_header">
-      <div class="notice_header_total">
+  <div class="box">
+    <div class="box_header">
+      <div class="box_header_total">
         <span class="count">{{ candidate.length }}</span>
         <span class="label">Candidates</span>
       </div>
-      <div class="notice_header_info">
+      <div class="box_header_info">
         <div class="item">
           <span class="item_top">All</span>
           <span class="item_botttom">Best In</span>
@@ -21,22 +21,22 @@
       </div>
     </div>
 
-    <div class="notice_body">
-      <div class="notice_body_column">
+    <div class="box_body">
+      <div class="box_body_column">
         <span class="label">Name</span>
         <span class="label">Resume Score</span>
         <span class="label">Skill Match</span>
         <span class="label">Skill</span>
       </div>
-      <div class="notice_body_list-box">
-        <NoticeList
+      <div class="box_body_list-box">
+        <CandidateList
           v-for="item in tableData"
           :key="item.userName"
           :data="item"
         />
       </div>
     </div>
-    <div class="notice_footer">
+    <div class="box_footer">
       <Pagination :totalPage="totalPage" @send-event="reset" />
     </div>
   </div>
@@ -44,7 +44,7 @@
 
 <script setup lang="ts">
 import { onMounted, ref, watch } from 'vue';
-import NoticeList from '@components/mocules/List.vue';
+import CandidateList from '@components/mocules/CandidateList.vue';
 import Pagination from '@components/mocules/common/Pagination.vue';
 import { Candidate, candidate } from '@constants';
 
@@ -86,7 +86,7 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-.notice {
+.box {
   display: flex;
   flex-direction: column;
   align-items: center;
