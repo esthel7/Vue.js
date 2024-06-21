@@ -27,5 +27,15 @@ const { theme } = toRefs(props);
     background-color: $color-blue-000;
     padding: 20px;
   }
+
+  &[layout-theme='candidate'] {
+    width: 100%;
+    height: 72px;
+    min-height: 72px;
+    padding: 0 16px;
+    gap: 24px;
+    background-color: rgba($color-white-200, 0.1);
+    border-radius: 16px;
+  }
 }
 </style>
