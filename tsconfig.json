@@ -23,7 +23,6 @@
     /* Alias */
     "baseUrl": ".",
     "paths": {
-      "@components": ["src/components/index"],
       "@components/*": ["src/components/*"],
       "@pages/*": ["src/pages/*"],
       "@routes/*": ["src/routes/*"],

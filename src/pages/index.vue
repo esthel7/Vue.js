@@ -5,5 +5,6 @@
 </template>
 
 <script setup lang="ts">
-import { BasicLayout, CandidateBox } from '@components';
+import BasicLayout from '@components/BasicLayout.vue';
+import CandidateBox from '@components/CandidateBox.vue';
 </script>

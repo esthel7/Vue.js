@@ -19,8 +19,9 @@
 
 <script setup lang="ts">
 import { toRefs } from 'vue';
-import { Badge, SquareLayout } from '@components';
 import { Candidate, candidate, roles } from '@constants';
+import Badge from './Badge.vue';
+import SquareLayout from './SquareLayout.vue';
 
 interface Props {
   sort?: string;

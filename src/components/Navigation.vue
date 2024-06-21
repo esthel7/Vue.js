@@ -32,7 +32,8 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import { BasicButton, SquareLayout } from '@components';
+import BasicButton from './BasicButton.vue';
+import SquareLayout from './SquareLayout.vue';
 
 const menu = [
   {

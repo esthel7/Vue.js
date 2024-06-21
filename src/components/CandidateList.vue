@@ -21,8 +21,10 @@
 
 <script setup lang="ts">
 import { toRefs } from 'vue';
-import { Badge, BarChart, SquareLayout } from '@components';
 import { Candidate } from '@constants';
+import Badge from './Badge.vue';
+import BarChart from './BarChart.vue';
+import SquareLayout from './SquareLayout.vue';
 
 interface Props {
   data: Candidate;
