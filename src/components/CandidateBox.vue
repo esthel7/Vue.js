@@ -44,8 +44,7 @@
 
 <script setup lang="ts">
 import { onMounted, ref, watch } from 'vue';
-import CandidateList from '@components/CandidateList.vue';
-import Pagination from '@components/Pagination.vue';
+import { CandidateList, Pagination } from '@components';
 import { Candidate, candidate } from '@constants';
 
 const tableData = ref<Array<Candidate>>([]);

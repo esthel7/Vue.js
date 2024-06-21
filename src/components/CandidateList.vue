@@ -26,8 +26,7 @@
 
 <script setup lang="ts">
 import { toRefs } from 'vue';
-import BarChart from '@components/BarChart.vue';
-import SquareLayout from '@components/SquareLayout.vue';
+import { BarChart, SquareLayout } from '@components';
 import { Candidate } from '@constants';
 
 interface Props {
