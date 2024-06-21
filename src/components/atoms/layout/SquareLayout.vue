@@ -1,5 +1,5 @@
 <template>
-  <div class="basic-layout" :layout-theme="theme">
+  <div class="square-layout" :layout-theme="theme">
     <slot />
   </div>
 </template>
@@ -16,15 +16,16 @@ const { theme } = toRefs(props);
 </script>
 
 <style lang="scss" scoped>
-.basic-layout {
+.square-layout {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: $color-white-000;
   border-radius: 5px;
 
-  &[layout-theme='blue'] {
+  &[layout-theme='navigation'] {
     background-color: $color-blue-000;
+    padding: 20px;
   }
 }
 </style>
