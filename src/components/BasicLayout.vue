@@ -14,7 +14,8 @@
 </template>
 
 <script setup lang="ts">
-import { Navigation, SquareLayout } from '@components';
+import Navigation from './Navigation.vue';
+import SquareLayout from './SquareLayout.vue';
 </script>
 
 <style lang="scss" scoped>

@@ -15,7 +15,6 @@
     "<THIRD_PARTY_MODULES>",
     "^@pages",
     "^@pages/(.*)$",
-    "^@components",
     "^@components/(.*)$",
     "^@constants",
     "^@constants/(.*)$",

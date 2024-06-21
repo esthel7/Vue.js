@@ -7,7 +7,8 @@
 </template>
 
 <script setup lang="ts">
-import { BasicLayout, SortJob } from '@components';
+import BasicLayout from '@components/BasicLayout.vue';
+import SortJob from '@components/SortJob.vue';
 import { roles } from '@constants';
 </script>
 
