@@ -1,0 +1,83 @@
+<template>
+  <section class="sort-job" v-if="sortBy">
+    <div class="sort-job_title">📌{{ sort }}</div>
+    <div class="sort-job_container">
+      <SquareLayout v-for="data in sortBy" :layout-theme="'jobCandidate'">
+        <img class="sort-job_profile" src="/assets/images/user-01.png" alt="" />
+        <div class="sort-job_text-box">
+          <div class="sort-job_text-box_detail name">
+            {{ data.userName }}
+          </div>
+          <div class="sort-job_text-box_detail">{{ data.userSkill }}</div>
+        </div>
+      </SquareLayout>
+    </div>
+  </section>
+</template>
+
+<script setup lang="ts">
+import { toRefs } from 'vue';
+import { SquareLayout } from '@components';
+import { Candidate, candidate, roles } from '@constants';
+
+interface Props {
+  sort?: string;
+}
+
+const props = defineProps<Props>();
+const { sort } = toRefs(props);
+
+let sortBy: Array<Candidate> = [];
+if (sort.value && roles.includes(sort.value)) {
+  sortBy = candidate.filter(item => item.userRole == sort.value);
+}
+</script>
+
+<style lang="scss" scoped>
+.sort-job {
+  &_title {
+    font-family: 'SUITE-Regular';
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    width: fit-content;
+    border-bottom: 2px solid $color-orange-000;
+  }
+
+  &_container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  &_profile {
+    width: 100%;
+  }
+
+  &_text-box {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 5px 10px;
+
+    &_detail {
+      overflow: hidden;
+      white-space: normal;
+      word-wrap: break-word;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      margin: auto 0;
+
+      &.name {
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+</style>

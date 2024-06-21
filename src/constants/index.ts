@@ -6,6 +6,14 @@ export interface Candidate {
   userSkill: string;
 }
 
+export const roles = [
+  'FrontEnd Developer',
+  'BackEnd Developer',
+  'User Experience',
+  'User Interface',
+  'Project Manager'
+];
+
 export const candidate: Array<Candidate> = [
   {
     userName: 'Marco',
