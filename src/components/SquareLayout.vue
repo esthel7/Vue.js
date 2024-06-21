@@ -24,6 +24,13 @@ const { theme } = toRefs(props);
   &[layout-theme='navigation'] {
     background-color: $color-blue-000;
     padding: 20px;
+    overflow-x: auto;
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+
+  &[layout-theme='navigation']::webkit-scrollbar {
+    display: none;
   }
 
   &[layout-theme='candidate'] {
