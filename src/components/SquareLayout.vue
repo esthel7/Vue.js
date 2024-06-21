@@ -17,9 +17,7 @@ const { theme } = toRefs(props);
 
 <style lang="scss" scoped>
 .square-layout {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center;
   background-color: $color-white-000;
   border-radius: 5px;
 

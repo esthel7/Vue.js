@@ -66,16 +66,12 @@ const moveToNext = () => {
 
 <style lang="scss" scoped>
 .pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center;
   width: 100%;
   gap: 8px;
 
   &_button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center;
     width: 24px;
     height: 24px;
     padding: 3px 7px;
