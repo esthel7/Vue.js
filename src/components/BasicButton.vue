@@ -1,5 +1,5 @@
 <template>
-  <div class="basic-button">
+  <div class="basic-button" @click="moveTo(data.label)">
     <img
       :src="`/assets/icons/${data.icon}.svg`"
       alt=""
@@ -11,6 +11,7 @@
 
 <script setup lang="ts">
 import { toRefs } from 'vue';
+import { useRouter } from 'vue-router';
 
 interface Button {
   icon: string;
@@ -21,8 +22,15 @@ interface Props {
   data: Button;
 }
 
+const router = useRouter();
 const props = defineProps<Props>();
 const { data } = toRefs(props);
+
+const moveTo = (loc: string) => {
+  loc = loc.toLowerCase();
+  if (loc === 'dashboard') loc = '';
+  router.push({ path: `/${loc.toLowerCase()}` });
+};
 </script>
 
 <style lang="scss" scoped>
