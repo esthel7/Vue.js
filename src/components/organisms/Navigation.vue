@@ -1,5 +1,5 @@
 <template>
-  <BasicLayout :theme="'blue'">
+  <SquareLayout :theme="'navigation'">
     <div class="navigation">
       <div class="navigation_sub-menu">
         <div class="navigation_sub-menu_button-box">
@@ -27,13 +27,13 @@
         </div>
       </div>
     </div>
-  </BasicLayout>
+  </SquareLayout>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue';
 import BasicButton from '@components/atoms/button/BasicButton.vue';
-import BasicLayout from '@components/atoms/layout/BasicLayout.vue';
+import SquareLayout from '@components/atoms/layout/SquareLayout.vue';
 
 const menu = [
   {

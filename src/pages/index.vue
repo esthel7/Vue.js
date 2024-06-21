@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <BasicLayout>
+    <SquareLayout>
       <div class="page_container">
         <section class="page_container_navigation">
           <Navigation />
@@ -9,12 +9,12 @@
           <Notice />
         </section>
       </div>
-    </BasicLayout>
+    </SquareLayout>
   </div>
 </template>
 
 <script setup lang="ts">
-import BasicLayout from '@components/atoms/layout/BasicLayout.vue';
+import SquareLayout from '@components/atoms/layout/SquareLayout.vue';
 import Navigation from '@components/organisms/Navigation.vue';
 import Notice from '@components/organisms/Notice.vue';
 </script>
