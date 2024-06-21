@@ -14,9 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import CandidateBox from '@components/CandidateBox.vue';
-import Navigation from '@components/Navigation.vue';
-import SquareLayout from '@components/SquareLayout.vue';
+import { CandidateBox, Navigation, SquareLayout } from '@components';
 </script>
 
 <style lang="scss" scoped>
