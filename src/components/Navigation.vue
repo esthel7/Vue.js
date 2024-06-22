@@ -10,7 +10,10 @@
         </div>
         <div
           class="navigation_sub-menu_button-box_top basic"
-          :style="{ display: BasicView ? 'block' : 'none' }"
+          :style="{
+            display: BasicView ? 'block' : 'none',
+            boxShadow: '2px 2px 5px'
+          }"
         >
           <NavButton v-for="item in topMenu" :key="item.label" :data="item" />
         </div>
@@ -29,7 +32,10 @@
         </div>
         <div
           class="navigation_sub-menu_button-box_top recruitment"
-          :style="{ display: RecruitmentView ? 'block' : 'none' }"
+          :style="{
+            display: RecruitmentView ? 'block' : 'none',
+            boxShadow: '2px 2px 5px'
+          }"
         >
           <NavButton
             v-for="item in middleMenu"
@@ -52,7 +58,10 @@
         </div>
         <div
           class="navigation_sub-menu_button-box_top organization"
-          :style="{ display: OrganizationView ? 'block' : 'none' }"
+          :style="{
+            display: OrganizationView ? 'block' : 'none',
+            boxShadow: '2px 2px 5px'
+          }"
         >
           <NavButton
             v-for="item in bottomMenu"
