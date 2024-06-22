@@ -43,6 +43,10 @@ const moveTo = (loc: string) => {
   gap: 16px;
   cursor: pointer;
 
+  @media (max-width: $top-nav) {
+    padding-right: 15px;
+  }
+
   &_icon {
     width: 24px;
     height: 24px;

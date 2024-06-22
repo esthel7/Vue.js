@@ -41,6 +41,10 @@ import SquareLayout from './SquareLayout.vue';
       max-height: 675px;
       margin-right: 20px;
 
+      @media (max-width: $top-nav) {
+        width: 100%;
+      }
+
       @media (max-height: 500px) {
         display: none;
       }
@@ -52,7 +56,7 @@ import SquareLayout from './SquareLayout.vue';
 
       @media (max-width: $top-nav) {
         width: 100%;
-        height: calc(100% - 100px);
+        height: calc(100% - 80px);
       }
 
       @media (max-height: $hidden-nav) {

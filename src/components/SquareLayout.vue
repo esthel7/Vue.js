@@ -30,7 +30,7 @@ const { theme } = toRefs(props);
     height: 100%;
 
     @media (max-width: $top-nav) {
-      height: 80px;
+      height: 60px;
     }
   }
 
