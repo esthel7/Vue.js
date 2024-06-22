@@ -3,13 +3,13 @@
     <div class="navigation">
       <div class="navigation_sub-menu">
         <div class="navigation_sub-menu_button-box">
-          <BasicButton v-for="item in topMenu" :key="item.label" :data="item" />
+          <NavButton v-for="item in topMenu" :key="item.label" :data="item" />
         </div>
       </div>
       <div class="navigation_sub-menu">
         <span class="navigation_sub-menu_title">Recruitment</span>
         <div class="navigation_sub-menu_button-box">
-          <BasicButton
+          <NavButton
             v-for="item in middleMenu"
             :key="item.label"
             :data="item"
@@ -19,7 +19,7 @@
       <div class="navigation_sub-menu">
         <span class="navigation_sub-menu_title">Organization</span>
         <div class="navigation_sub-menu_button-box">
-          <BasicButton
+          <NavButton
             v-for="item in bottomMenu"
             :key="item.label"
             :data="item"
@@ -32,7 +32,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import BasicButton from './BasicButton.vue';
+import NavButton from './NavButton.vue';
 import SquareLayout from './SquareLayout.vue';
 
 const menu = [
