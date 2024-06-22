@@ -42,8 +42,7 @@ const { theme } = toRefs(props);
     width: 100%;
     height: 72px;
     min-height: 72px;
-    padding: 0 16px;
-    gap: 24px;
+    gap: 20px;
     background-color: rgba($color-white-200, 0.1);
     border-radius: 16px;
   }

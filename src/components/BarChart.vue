@@ -28,7 +28,7 @@ const { data } = toRefs(props);
 <style lang="scss" scoped>
 .bar-chart {
   @include flex-center;
-  width: 70%;
+  width: 100%;
 
   &_container {
     display: flex;
