@@ -54,6 +54,10 @@ const { theme } = toRefs(props);
     background-color: $color-gray-200;
     margin-left: 20px;
     margin-bottom: 20px;
+
+    @media (max-width: 400px) {
+      margin-left: 0;
+    }
   }
 }
 </style>

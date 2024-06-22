@@ -50,6 +50,22 @@ if (sort.value && roles.includes(sort.value)) {
   &_container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+
+    @media (max-width: 1000px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media (max-width: 800px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 400px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &_profile {
