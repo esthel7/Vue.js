@@ -27,6 +27,7 @@ const { theme } = toRefs(props);
     overflow-x: auto;
     overflow-y: auto;
     scrollbar-width: none;
+    height: 100%;
   }
 
   &[layout-theme='navigation']::webkit-scrollbar {

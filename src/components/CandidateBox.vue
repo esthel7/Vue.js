@@ -89,9 +89,8 @@ onMounted(() => {
 .box {
   @include flex-center;
   flex-direction: column;
-  width: calc(100% - 36px);
+  width: 100%;
   height: 100%;
-  margin-left: auto;
 
   &_header {
     display: flex;

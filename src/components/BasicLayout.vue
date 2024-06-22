@@ -34,6 +34,7 @@ import SquareLayout from './SquareLayout.vue';
     &_navigation {
       width: 20%;
       height: 100%;
+      margin-right: 20px;
     }
 
     &_other {
