@@ -2,6 +2,7 @@
   <SquareLayout :theme="'navigation'">
     <div class="navigation">
       <div class="navigation_sub-menu">
+        <span class="navigation_sub-menu_title">Basic</span>
         <div class="navigation_sub-menu_button-box">
           <NavButton v-for="item in topMenu" :key="item.label" :data="item" />
         </div>
@@ -107,7 +108,7 @@ const bottomMenu = computed(() => menu.slice(7, menu.length));
     }
 
     &_button-box {
-      width: calc(100% - 24px);
+      width: 100%;
     }
   }
 }

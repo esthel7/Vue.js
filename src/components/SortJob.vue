@@ -42,7 +42,6 @@ if (sort.value && roles.includes(sort.value)) {
     font-family: 'SUITE-Regular';
     font-size: 20px;
     font-weight: bold;
-    margin-left: 20px;
     margin-bottom: 15px;
     width: fit-content;
     border-bottom: 2px solid $color-orange-000;
