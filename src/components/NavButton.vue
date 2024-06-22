@@ -38,7 +38,6 @@ const moveTo = (loc: string) => {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: calc(100% - 24px);
   height: 50px;
   padding-left: 15px;
   gap: 16px;

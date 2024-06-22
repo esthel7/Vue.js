@@ -26,7 +26,7 @@ import SquareLayout from './SquareLayout.vue';
   background-color: $color-black-900;
 
   &_container {
-    @include flex-center;
+    display: flex;
     padding: 20px;
     width: 95vw;
     height: 95vh;
@@ -34,12 +34,21 @@ import SquareLayout from './SquareLayout.vue';
     &_navigation {
       width: 20%;
       height: 100%;
+      max-height: 675px;
       margin-right: 20px;
+
+      @media (max-width: $hidden-nav) {
+        display: none;
+      }
     }
 
     &_other {
       width: 80%;
       height: 100%;
+
+      @media (max-width: $hidden-nav) {
+        width: 100%;
+      }
     }
   }
 }
