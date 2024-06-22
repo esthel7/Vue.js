@@ -1,11 +1,11 @@
 <template>
-  <div class="basic-button" @click="moveTo(data.label)">
+  <div class="nav-button" @click="moveTo(data.label)">
     <img
       :src="`/assets/icons/${data.icon}.svg`"
       alt=""
-      class="basic-button_icon"
+      class="nav-button_icon"
     />
-    <span class="basic-button_label">{{ data.label }}</span>
+    <span class="nav-button_label">{{ data.label }}</span>
   </div>
 </template>
 
@@ -34,7 +34,7 @@ const moveTo = (loc: string) => {
 </script>
 
 <style lang="scss" scoped>
-.basic-button {
+.nav-button {
   display: flex;
   align-items: center;
   justify-content: flex-start;
