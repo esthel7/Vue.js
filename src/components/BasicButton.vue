@@ -40,7 +40,7 @@ const moveTo = (loc: string) => {
   justify-content: flex-start;
   width: calc(100% - 24px);
   height: 50px;
-  padding-left: 24px;
+  padding-left: 15px;
   gap: 16px;
   cursor: pointer;
 
