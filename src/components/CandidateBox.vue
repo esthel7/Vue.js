@@ -16,7 +16,7 @@
         </div>
         <div class="item">
           <span class="item_top">Default</span>
-          <span class="item_botttom">Sort Results</span>
+          <span class="item_botttom">All Results</span>
         </div>
       </div>
     </div>
@@ -25,7 +25,7 @@
       <div class="box_body_column">
         <span class="label">Name</span>
         <span class="label">Resume Score</span>
-        <span class="label">Skill Match</span>
+        <span v-if="visible" class="label">Skill Match</span>
         <span class="label">Skill</span>
       </div>
       <div class="box_body_list-box">
@@ -43,7 +43,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, watch } from 'vue';
+import { onMounted, onUnmounted, ref, watch } from 'vue';
 import { Candidate, candidate } from '@constants';
 import CandidateList from './CandidateList.vue';
 import Pagination from './Pagination.vue';
@@ -52,7 +52,9 @@ const tableData = ref<Array<Candidate>>([]);
 const selectedPage = ref<number>(1);
 const totalPage = ref<number>(0);
 const totalCount = ref<number | undefined>();
+const visible = ref(false);
 const limit = ref<number>(10);
+const Hide = 650;
 
 const reset = (pageIdx: number) => {
   if (pageIdx === 0) selectedPage.value = 1;
@@ -76,12 +78,22 @@ const getData = () => {
   tableData.value = disassemble(selectedPage.value - 1, candidate, limit.value);
 };
 
+const checkVisible = () => {
+  visible.value = window.innerWidth > Hide ? true : false;
+};
+
 watch(selectedPage, () => {
   getData();
 });
 
 onMounted(() => {
   getData();
+  checkVisible();
+  window.addEventListener('resize', checkVisible);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('resize', checkVisible);
 });
 </script>
 
@@ -122,6 +134,10 @@ onMounted(() => {
       align-items: center;
       gap: 40px;
 
+      @media (max-width: 450px) {
+        display: none;
+      }
+
       .item {
         display: flex;
         flex-direction: column;
@@ -148,18 +164,27 @@ onMounted(() => {
     &_column {
       display: flex;
       align-items: center;
+      gap: 20px;
       width: 100%;
       height: 60px;
 
       .label {
+        flex: 1;
         display: flex;
         align-items: center;
         justify-content: flex-start;
         width: 25%;
         height: 100%;
-        margin-left: 16px;
         font-weight: 300;
         color: $color-white-200;
+      }
+
+      :first-child {
+        padding-left: 16px;
+
+        @media (max-width: 650px) {
+          flex: 1.5;
+        }
       }
     }
 

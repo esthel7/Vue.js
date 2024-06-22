@@ -10,7 +10,7 @@
     <div class="item">
       <BarChart :data="data.userResumeScore" />
     </div>
-    <div class="item">
+    <div v-if="visible" class="item">
       <BarChart :data="data.userSkillMatch" />
     </div>
     <div class="item">
@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import { toRefs } from 'vue';
+import { onMounted, onUnmounted, ref, toRefs } from 'vue';
 import { Candidate } from '@constants';
 import Badge from './Badge.vue';
 import BarChart from './BarChart.vue';
@@ -32,6 +32,21 @@ interface Props {
 
 const props = defineProps<Props>();
 const { data } = toRefs(props);
+const visible = ref(false);
+const Hide = 650;
+
+const checkVisible = () => {
+  visible.value = window.innerWidth > Hide ? true : false;
+};
+
+onMounted(() => {
+  checkVisible();
+  window.addEventListener('resize', checkVisible);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('resize', checkVisible);
+});
 </script>
 
 <style lang="scss" scoped>
@@ -40,7 +55,13 @@ const { data } = toRefs(props);
   align-items: center;
   justify-content: flex-start;
   width: 25%;
+  min-width: 25%;
   gap: 8px;
+  padding-left: 16px;
+
+  @media (max-width: 650px) {
+    flex: 1.5;
+  }
 
   &_image {
     width: 44px;
@@ -53,12 +74,19 @@ const { data } = toRefs(props);
     display: flex;
     flex-direction: column;
     gap: 4px;
+    overflow: hidden;
+    width: 100%;
 
     .name {
       color: $color-black-900;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .duty {
+      overflow: hidden;
+      text-overflow: ellipsis;
       font-size: 14px;
       font-weight: 300;
       color: $color-white-200;
@@ -68,5 +96,6 @@ const { data } = toRefs(props);
 
 .item {
   width: 25%;
+  flex: 1;
 }
 </style>
