@@ -28,6 +28,10 @@ const { theme } = toRefs(props);
     overflow-y: auto;
     scrollbar-width: none;
     height: 100%;
+
+    @media (max-width: $top-nav) {
+      height: 80px;
+    }
   }
 
   &[layout-theme='navigation']::webkit-scrollbar {

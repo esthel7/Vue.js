@@ -31,13 +31,17 @@ import SquareLayout from './SquareLayout.vue';
     width: 95vw;
     height: 95vh;
 
+    @media (max-width: $top-nav) {
+      flex-direction: column;
+    }
+
     &_navigation {
       width: 20%;
       height: 100%;
       max-height: 675px;
       margin-right: 20px;
 
-      @media (max-width: $hidden-nav) {
+      @media (max-height: 500px) {
         display: none;
       }
     }
@@ -46,8 +50,13 @@ import SquareLayout from './SquareLayout.vue';
       width: 80%;
       height: 100%;
 
-      @media (max-width: $hidden-nav) {
+      @media (max-width: $top-nav) {
         width: 100%;
+        height: calc(100% - 100px);
+      }
+
+      @media (max-height: $hidden-nav) {
+        height: 100%;
       }
     }
   }
