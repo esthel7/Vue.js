@@ -3,14 +3,20 @@
     <section class="calendar">
       <div class="calendar_template">
         <div class="calendar_template_month">
-          <div class="calendar_template_month_click">⬅️</div>
+          <div class="calendar_template_month_click" @click="changeMonth('-')">
+            ⬅️
+          </div>
           <div>
-            <div class="calendar_template_month_value">{{ month }}</div>
+            <div class="calendar_template_month_value">
+              {{ year }}.{{ month }}
+            </div>
             <div class="calendar_template_month_today" @click="changeToday">
               today
             </div>
           </div>
-          <div class="calendar_template_month_click">➡️</div>
+          <div class="calendar_template_month_click" @click="changeMonth('+')">
+            ➡️
+          </div>
         </div>
         <div class="calendar_template_header">
           <span>Sun</span>
@@ -103,7 +109,9 @@ const dayCandidate = (day: number) => {
   );
 };
 
-const dateItems: Array<Array<number>> = makeCalendar(year.value, month.value);
+const dateItems = ref<Array<Array<number>>>(
+  makeCalendar(year.value, month.value)
+);
 const sortMonth = ref<Array<Candidate>>(monthCandidate(month.value));
 const selectedCandidate = ref<Array<Candidate>>(dayCandidate(day.value));
 
@@ -112,6 +120,25 @@ const changeToday = () => {
   month.value = new Date().getMonth() + 1;
   day.value = new Date().getDate();
 
+  sortMonth.value = monthCandidate(month.value);
+  selectedCandidate.value = dayCandidate(day.value);
+};
+
+const changeMonth = (flag: '+' | '-') => {
+  if (flag === '+') {
+    if (month.value === 12) {
+      year.value += 1;
+      month.value = 1;
+    } else month.value += 1;
+  } else {
+    if (month.value === 1) {
+      year.value -= 1;
+      month.value = 12;
+    } else month.value -= 1;
+  }
+
+  day.value = 1;
+  dateItems.value = makeCalendar(year.value, month.value);
   sortMonth.value = monthCandidate(month.value);
   selectedCandidate.value = dayCandidate(day.value);
 };
