@@ -2,7 +2,16 @@
   <BasicLayout>
     <section class="calendar">
       <div class="calendar_template">
-        <div class="calendar_template_month">{{ month }}</div>
+        <div class="calendar_template_month">
+          <div class="calendar_template_month_click">⬅️</div>
+          <div>
+            <div class="calendar_template_month_value">{{ month }}</div>
+            <div class="calendar_template_month_today" @click="changeToday">
+              today
+            </div>
+          </div>
+          <div class="calendar_template_month_click">➡️</div>
+        </div>
         <div class="calendar_template_header">
           <span>Sun</span>
           <span>Mon</span>
@@ -38,7 +47,7 @@
       </div>
       <div class="calendar_person">
         <div>🧑‍💻 Candidate</div>
-        <CandidateBadge v-for="data in selectedDate" :data="data" />
+        <CandidateBadge v-for="data in selectedCandidate" :data="data" />
       </div>
     </section>
   </BasicLayout>
@@ -50,21 +59,9 @@ import BasicLayout from '@components/BasicLayout.vue';
 import CandidateBadge from '@components/CandidateBadge.vue';
 import { Candidate, candidate } from '@constants';
 
-const year = new Date().getFullYear();
-const month = new Date().getMonth() + 1;
+const year = ref<number>(new Date().getFullYear());
+const month = ref<number>(new Date().getMonth() + 1);
 const day = ref<number>(new Date().getDate());
-
-const sortMonth = ref<Array<Candidate>>(
-  candidate.filter(item =>
-    item.possibleDate.some(date => Number(date.split('-')[1]) === month)
-  )
-);
-
-const selectedDate = ref<Array<Candidate>>(
-  sortMonth.value.filter(item =>
-    item.possibleDate.some(date => Number(date.split('-')[2]) === day.value)
-  )
-);
 
 const makeCalendar = (year: number, month: number) => {
   const weeks = 7;
@@ -94,13 +91,34 @@ const makeCalendar = (year: number, month: number) => {
   return dateItems;
 };
 
-const dateItems: Array<Array<number>> = makeCalendar(year, month);
+const monthCandidate = (month: number) => {
+  return candidate.filter(item =>
+    item.possibleDate.some(date => Number(date.split('-')[1]) === month)
+  );
+};
+
+const dayCandidate = (day: number) => {
+  return sortMonth.value.filter(item =>
+    item.possibleDate.some(date => Number(date.split('-')[2]) === day)
+  );
+};
+
+const dateItems: Array<Array<number>> = makeCalendar(year.value, month.value);
+const sortMonth = ref<Array<Candidate>>(monthCandidate(month.value));
+const selectedCandidate = ref<Array<Candidate>>(dayCandidate(day.value));
+
+const changeToday = () => {
+  year.value = new Date().getFullYear();
+  month.value = new Date().getMonth() + 1;
+  day.value = new Date().getDate();
+
+  sortMonth.value = monthCandidate(month.value);
+  selectedCandidate.value = dayCandidate(day.value);
+};
 
 const changeDay = (item: number) => {
   day.value = item;
-  selectedDate.value = sortMonth.value.filter(item =>
-    item.possibleDate.some(date => Number(date.split('-')[2]) === day.value)
-  );
+  selectedCandidate.value = dayCandidate(day.value);
 };
 </script>
 
@@ -120,9 +138,38 @@ const changeDay = (item: number) => {
     flex-direction: column;
 
     &_month {
-      font-size: 40px;
-      margin: 20px auto;
-      cursor: pointer;
+      width: 100%;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 30px;
+      margin-top: 20px;
+      margin-bottom: 15px;
+
+      &_click {
+        cursor: pointer;
+      }
+
+      :nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+      }
+
+      &_value {
+        cursor: pointer;
+        font-size: 40px;
+      }
+
+      &_today {
+        cursor: pointer;
+        color: white;
+        font-size: 15px;
+        background-color: $color-gray-700;
+        padding: 0 5px;
+        border-radius: 5px;
+      }
     }
 
     &_header {
