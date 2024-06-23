@@ -43,6 +43,8 @@ import SquareLayout from './SquareLayout.vue';
 
       @media (max-width: $top-nav) {
         width: 100%;
+        height: auto;
+        padding-bottom: 20px;
       }
 
       @media (max-height: 500px) {
