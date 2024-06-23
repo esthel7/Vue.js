@@ -26,16 +26,11 @@ const { theme } = toRefs(props);
     padding: 20px;
     overflow-x: auto;
     overflow-y: auto;
-    scrollbar-width: none;
     height: 100%;
 
     @media (max-width: $top-nav) {
       height: 60px;
     }
-  }
-
-  &[layout-theme='navigation']::webkit-scrollbar {
-    display: none;
   }
 
   &[layout-theme='candidate'] {
