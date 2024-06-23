@@ -51,8 +51,6 @@ const { theme } = toRefs(props);
     display: grid;
     grid-template-columns: 1fr 1fr;
     background-color: $color-gray-200;
-    margin-left: 20px;
-    margin-bottom: 20px;
 
     @media (max-width: 400px) {
       margin-left: 0;
