@@ -53,7 +53,9 @@
       </div>
       <div class="calendar_person">
         <div>🧑‍💻 Candidate</div>
-        <CandidateBadge v-for="data in selectedCandidate" :data="data" />
+        <div class="calendar_person_badges">
+          <CandidateBadge v-for="data in selectedCandidate" :data="data" />
+        </div>
       </div>
     </section>
   </BasicLayout>
@@ -157,6 +159,11 @@ const changeDay = (item: number) => {
   width: 100%;
   height: 100%;
 
+  @media (max-width: 850px) {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
   &_template {
     flex: 2;
     background-color: $color-gray-100;
@@ -223,6 +230,7 @@ const changeDay = (item: number) => {
       height: 100%;
       display: flex;
       flex-direction: column;
+      gap: 15px;
       justify-content: space-between;
       padding: 20px 0;
       overflow-y: auto;
@@ -261,6 +269,21 @@ const changeDay = (item: number) => {
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
     overflow-y: auto;
+
+    @media (max-width: 850px) {
+      overflow-y: unset;
+    }
+
+    &_badges {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @media (max-width: 850px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
   }
 }
 </style>
