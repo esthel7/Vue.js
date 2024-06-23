@@ -196,11 +196,6 @@ onUnmounted(() => {
       height: calc(100% - 92px);
       gap: 12px;
       overflow-y: auto;
-      scrollbar-width: none;
-    }
-
-    &_list-box::webkit-scrollbar {
-      display: none;
     }
   }
 }

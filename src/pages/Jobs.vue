@@ -15,11 +15,6 @@ import { roles } from '@constants';
 <style lang="scss" scoped>
 .jobs {
   overflow-y: auto;
-  scrollbar-width: none;
   height: 100%;
-}
-
-.jobs::webkit-scrollbar {
-  display: none;
 }
 </style>
