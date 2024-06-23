@@ -21,12 +21,14 @@
               <div
                 class="calendar_template_children_week_days"
                 v-if="item !== day"
+                @click="changeDay(item)"
               >
                 {{ item }}
               </div>
               <div
                 class="calendar_template_children_week_days pick"
                 v-if="item === day"
+                @click="changeDay(item)"
               >
                 {{ item }}
               </div>
@@ -43,13 +45,26 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
 import BasicLayout from '@components/BasicLayout.vue';
 import CandidateBadge from '@components/CandidateBadge.vue';
 import { Candidate, candidate } from '@constants';
 
 const year = new Date().getFullYear();
 const month = new Date().getMonth() + 1;
-const day = new Date().getDate();
+const day = ref<number>(new Date().getDate());
+
+const sortMonth = ref<Array<Candidate>>(
+  candidate.filter(item =>
+    item.possibleDate.some(date => Number(date.split('-')[1]) === month)
+  )
+);
+
+const selectedDate = ref<Array<Candidate>>(
+  sortMonth.value.filter(item =>
+    item.possibleDate.some(date => Number(date.split('-')[2]) === day.value)
+  )
+);
 
 const makeCalendar = (year: number, month: number) => {
   const weeks = 7;
@@ -81,13 +96,12 @@ const makeCalendar = (year: number, month: number) => {
 
 const dateItems: Array<Array<number>> = makeCalendar(year, month);
 
-const sortMonth: Array<Candidate> = candidate.filter(item =>
-  item.possibleDate.some(date => Number(date.split('-')[1]) === month)
-);
-
-const selectedDate: Array<Candidate> = sortMonth.filter(item =>
-  item.possibleDate.some(date => Number(date.split('-')[2]) === day)
-);
+const changeDay = (item: number) => {
+  day.value = item;
+  selectedDate.value = sortMonth.value.filter(item =>
+    item.possibleDate.some(date => Number(date.split('-')[2]) === day.value)
+  );
+};
 </script>
 
 <style lang="scss" scoped>
