@@ -19,10 +19,10 @@ interface Props {
 const props = defineProps<Props>();
 const { sort } = toRefs(props);
 
-let sortBy: Array<Candidate> = [];
-if (sort.value && roles.includes(sort.value)) {
-  sortBy = candidate.filter(item => item.userRole == sort.value);
-}
+const sortBy: Array<Candidate> =
+  sort.value && roles.includes(sort.value)
+    ? candidate.filter(item => item.userRole == sort.value)
+    : [];
 </script>
 
 <style lang="scss" scoped>
@@ -39,6 +39,7 @@ if (sort.value && roles.includes(sort.value)) {
   &_container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
 
     @media (max-width: 1000px) {
       grid-template-columns: repeat(4, 1fr);

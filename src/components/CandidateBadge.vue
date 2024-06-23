@@ -1,19 +1,21 @@
 <template>
-  <SquareLayout :layout-theme="'candidateBadge'">
-    <img
-      class="candidate-badge_profile"
-      src="/assets/images/user-01.png"
-      alt=""
-    />
-    <div class="candidate-badge_text-box">
-      <div class="candidate-badge_text-box_detail name">
-        {{ data.userName }}
+  <div class="candidate-badge">
+    <SquareLayout :layout-theme="'candidateBadge'">
+      <img
+        class="candidate-badge_profile"
+        src="/assets/images/user-01.png"
+        alt=""
+      />
+      <div class="candidate-badge_text-box">
+        <div class="candidate-badge_text-box_detail name">
+          {{ data.userName }}
+        </div>
+        <div class="candidate-badge_text-box_detail skill">
+          <Badge :userSkill="data.userSkill" />
+        </div>
       </div>
-      <div class="candidate-badge_text-box_detail skill">
-        <Badge :userSkill="data.userSkill" />
-      </div>
-    </div>
-  </SquareLayout>
+    </SquareLayout>
+  </div>
 </template>
 
 <script setup lang="ts">
