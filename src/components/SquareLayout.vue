@@ -47,7 +47,7 @@ const { theme } = toRefs(props);
     border-radius: 16px;
   }
 
-  &[layout-theme='jobCandidate'] {
+  &[layout-theme='candidateBadge'] {
     display: grid;
     grid-template-columns: 1fr 1fr;
     background-color: $color-gray-200;

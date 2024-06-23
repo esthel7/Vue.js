@@ -2,17 +2,7 @@
   <section class="sort-job" v-if="sortBy">
     <div class="sort-job_title">📌{{ sort }}</div>
     <div class="sort-job_container">
-      <SquareLayout v-for="data in sortBy" :layout-theme="'jobCandidate'">
-        <img class="sort-job_profile" src="/assets/images/user-01.png" alt="" />
-        <div class="sort-job_text-box">
-          <div class="sort-job_text-box_detail name">
-            {{ data.userName }}
-          </div>
-          <div class="sort-job_text-box_detail skill">
-            <Badge :userSkill="data.userSkill" />
-          </div>
-        </div>
-      </SquareLayout>
+      <CandidateBadge v-for="data in sortBy" :data="data" />
     </div>
   </section>
 </template>
@@ -20,8 +10,7 @@
 <script setup lang="ts">
 import { toRefs } from 'vue';
 import { Candidate, candidate, roles } from '@constants';
-import Badge from './Badge.vue';
-import SquareLayout from './SquareLayout.vue';
+import CandidateBadge from './CandidateBadge.vue';
 
 interface Props {
   sort?: string;
@@ -65,42 +54,6 @@ if (sort.value && roles.includes(sort.value)) {
 
     @media (max-width: 400px) {
       grid-template-columns: 1fr;
-    }
-  }
-
-  &_profile {
-    width: 100%;
-  }
-
-  &_text-box {
-    display: flex;
-    flex-direction: column;
-    text-align: right;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    padding: 5px 10px;
-
-    &_detail {
-      display: flex;
-      margin: auto 0;
-
-      &.name {
-        text-align: right;
-        font-size: 20px;
-        font-weight: bold;
-        overflow: hidden;
-        white-space: normal;
-        word-wrap: break-word;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-      }
-
-      &.skill {
-        margin-left: auto;
-      }
     }
   }
 }
