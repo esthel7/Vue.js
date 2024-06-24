@@ -51,5 +51,10 @@ const { theme } = toRefs(props);
       margin-left: 0;
     }
   }
+
+  &[layout-theme='candidateReference'] {
+    padding: 20px;
+    border: 3px solid $color-gray-700;
+  }
 }
 </style>
