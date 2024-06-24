@@ -146,7 +146,7 @@ onUnmounted(() => {
 
         &_top {
           font-family: 'MBC1961GulimM';
-          color: $color-blue-000;
+          color: $color-blue-100;
         }
 
         &_bottom {
