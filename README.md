@@ -1,4 +1,4 @@
-# ✨Vue.js about Consultitng
+# ✨Vue.js about Consulting
 
 ```git
 ⚡ 2024.06 ~
