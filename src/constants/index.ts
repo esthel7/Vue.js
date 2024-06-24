@@ -5,6 +5,7 @@ export interface Candidate {
   userSkillMatch: number;
   userSkill: string;
   possibleDate: Array<string>;
+  reference: number;
 }
 
 export const roles = [
@@ -28,7 +29,8 @@ export const candidate: Array<Candidate> = [
       '2024-05-25',
       '2024-06-11',
       '2024-07-05'
-    ]
+    ],
+    reference: 300000
   },
   {
     userName: 'Jeff',
@@ -42,7 +44,8 @@ export const candidate: Array<Candidate> = [
       '2024-06-15',
       '2024-07-05',
       '2024-08-04'
-    ]
+    ],
+    reference: 200000
   },
   {
     userName: 'Eric',
@@ -58,7 +61,8 @@ export const candidate: Array<Candidate> = [
       '2024-07-28',
       '2024-08-30',
       '2024-08-31'
-    ]
+    ],
+    reference: 100000
   },
   {
     userName: 'Merry',
@@ -72,7 +76,8 @@ export const candidate: Array<Candidate> = [
       '2024-06-20',
       '2024-06-21',
       '2024-07-01'
-    ]
+    ],
+    reference: 150000
   },
   {
     userName: 'John',
@@ -80,7 +85,8 @@ export const candidate: Array<Candidate> = [
     userResumeScore: 100,
     userSkillMatch: 100,
     userSkill: 'Senior',
-    possibleDate: ['2024-06-01', '2024-06-21', '2024-07-01', '2024-08-01']
+    possibleDate: ['2024-06-01', '2024-06-21', '2024-07-01', '2024-08-01'],
+    reference: 250000
   },
   {
     userName: 'Maxwell',
@@ -88,7 +94,8 @@ export const candidate: Array<Candidate> = [
     userResumeScore: 50,
     userSkillMatch: 50,
     userSkill: 'Junior',
-    possibleDate: ['2024-06-01']
+    possibleDate: ['2024-06-01'],
+    reference: 500000
   },
   {
     userName: 'Poloe',
@@ -96,7 +103,8 @@ export const candidate: Array<Candidate> = [
     userResumeScore: 80,
     userSkillMatch: 76,
     userSkill: 'Senior',
-    possibleDate: ['2024-07-01']
+    possibleDate: ['2024-07-01'],
+    reference: 90000
   },
   {
     userName: 'Marco2',
@@ -104,7 +112,8 @@ export const candidate: Array<Candidate> = [
     userResumeScore: 89,
     userSkillMatch: 80,
     userSkill: 'Junior',
-    possibleDate: ['2024-08-01']
+    possibleDate: ['2024-08-01'],
+    reference: 100000
   },
   {
     userName: 'Jeff2',
@@ -112,7 +121,8 @@ export const candidate: Array<Candidate> = [
     userResumeScore: 72,
     userSkillMatch: 65,
     userSkill: 'Senior',
-    possibleDate: ['2024-06-01', '2024-07-11', '2024-08-09']
+    possibleDate: ['2024-06-01', '2024-07-11', '2024-08-09'],
+    reference: 200000
   },
   {
     userName: 'Eric2',
@@ -127,7 +137,8 @@ export const candidate: Array<Candidate> = [
       '2024-06-14',
       '2024-07-08',
       '2024-07-15'
-    ]
+    ],
+    reference: 70000
   },
   {
     userName: 'Merry2',
@@ -135,7 +146,8 @@ export const candidate: Array<Candidate> = [
     userResumeScore: 56,
     userSkillMatch: 43,
     userSkill: 'Junior',
-    possibleDate: ['2024-06-11', '2024-07-07', '2024-07-15']
+    possibleDate: ['2024-06-11', '2024-07-07', '2024-07-15'],
+    reference: 30000
   },
   {
     userName: 'John2',
@@ -143,7 +155,8 @@ export const candidate: Array<Candidate> = [
     userResumeScore: 100,
     userSkillMatch: 100,
     userSkill: 'Senior',
-    possibleDate: ['2024-06-17', '2024-07-02', '2024-08-15']
+    possibleDate: ['2024-06-17', '2024-07-02', '2024-08-15'],
+    reference: 220000
   },
   {
     userName: 'Maxwell2',
@@ -151,7 +164,8 @@ export const candidate: Array<Candidate> = [
     userResumeScore: 50,
     userSkillMatch: 50,
     userSkill: 'Junior',
-    possibleDate: ['2024-06-04', '2024-06-06', '2024-08-22']
+    possibleDate: ['2024-06-04', '2024-06-06', '2024-08-22'],
+    reference: 400000
   },
   {
     userName: 'Poloe2',
@@ -159,7 +173,8 @@ export const candidate: Array<Candidate> = [
     userResumeScore: 80,
     userSkillMatch: 76,
     userSkill: 'Senior',
-    possibleDate: ['2024-07-04', '2024-07-06', '2024-08-22']
+    possibleDate: ['2024-07-04', '2024-07-06', '2024-08-22'],
+    reference: 250000
   },
   {
     userName: 'Marco3',
@@ -167,7 +182,8 @@ export const candidate: Array<Candidate> = [
     userResumeScore: 89,
     userSkillMatch: 80,
     userSkill: 'Junior',
-    possibleDate: ['2024-05-04']
+    possibleDate: ['2024-05-04'],
+    reference: 120000
   },
   {
     userName: 'Jeff3',
@@ -175,7 +191,8 @@ export const candidate: Array<Candidate> = [
     userResumeScore: 72,
     userSkillMatch: 65,
     userSkill: 'Senior',
-    possibleDate: ['2024-06-24', '2024-07-18', '2024-07-25']
+    possibleDate: ['2024-06-24', '2024-07-18', '2024-07-25'],
+    reference: 250000
   },
   {
     userName: 'Eric3',
@@ -183,7 +200,8 @@ export const candidate: Array<Candidate> = [
     userResumeScore: 90,
     userSkillMatch: 91,
     userSkill: 'Senior',
-    possibleDate: ['2024-05-24', '2024-07-08', '2024-08-25']
+    possibleDate: ['2024-05-24', '2024-07-08', '2024-08-25'],
+    reference: 360000
   },
   {
     userName: 'Merry3',
@@ -197,7 +215,8 @@ export const candidate: Array<Candidate> = [
       '2024-05-26',
       '2024-06-08',
       '2024-07-25'
-    ]
+    ],
+    reference: 400000
   },
   {
     userName: 'John3',
@@ -205,7 +224,8 @@ export const candidate: Array<Candidate> = [
     userResumeScore: 100,
     userSkillMatch: 100,
     userSkill: 'Senior',
-    possibleDate: ['2024-06-24', '2024-07-08', '2024-07-25']
+    possibleDate: ['2024-06-24', '2024-07-08', '2024-07-25'],
+    reference: 280000
   },
   {
     userName: 'Maxwell3',
@@ -213,7 +233,8 @@ export const candidate: Array<Candidate> = [
     userResumeScore: 50,
     userSkillMatch: 50,
     userSkill: 'Junior',
-    possibleDate: ['2024-05-22', '2024-05-28', '2024-07-25']
+    possibleDate: ['2024-05-22', '2024-05-28', '2024-07-25'],
+    reference: 150000
   },
   {
     userName: 'Poloe3',
@@ -221,6 +242,7 @@ export const candidate: Array<Candidate> = [
     userResumeScore: 80,
     userSkillMatch: 76,
     userSkill: 'Senior',
-    possibleDate: ['2024-06-12']
+    possibleDate: ['2024-06-12'],
+    reference: 50000
   }
 ];
