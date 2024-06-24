@@ -22,7 +22,7 @@ const { theme } = toRefs(props);
   border-radius: 5px;
 
   &[layout-theme='navigation'] {
-    background-color: $color-blue-000;
+    background-color: $color-blue-100;
     padding: 20px;
     overflow-x: auto;
     overflow-y: auto;

@@ -24,8 +24,8 @@ const { userSkill } = toRefs(props);
   width: 60px;
   height: 12px;
   padding: 8px;
-  color: $color-blue-000;
-  background-color: rgba($color-blue-000, 0.1);
+  color: $color-blue-100;
+  background-color: rgba($color-blue-100, 0.1);
   border-radius: 12px;
 }
 
