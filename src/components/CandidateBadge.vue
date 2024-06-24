@@ -1,5 +1,5 @@
 <template>
-  <div class="candidate-badge">
+  <div class="candidate-badge" :class="loc ? 'calendar' : null">
     <SquareLayout :layout-theme="'candidateBadge'">
       <img
         class="candidate-badge_profile"
@@ -26,13 +26,28 @@ import SquareLayout from './SquareLayout.vue';
 
 interface Props {
   data: Candidate;
+  loc?: 'calendar';
 }
 
 const props = defineProps<Props>();
-const { data } = toRefs(props);
+const { data, loc } = toRefs(props);
 </script>
 
 <style lang="scss" scoped>
+@keyframes LeftToRight {
+  0% {
+    transform: translate(-100%, 0);
+  }
+
+  80% {
+    transform: translate(15px, 0);
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}
+
 .candidate-badge {
   &_profile {
     width: 100%;
@@ -69,5 +84,11 @@ const { data } = toRefs(props);
       }
     }
   }
+}
+
+.calendar {
+  animation-name: LeftToRight;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-in-out;
 }
 </style>
