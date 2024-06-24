@@ -26,6 +26,15 @@ const { data } = toRefs(props);
 </script>
 
 <style lang="scss" scoped>
+@keyframes fill {
+  0% {
+    width: 0;
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
 .bar-chart {
   @include flex-center;
   width: 100%;
@@ -51,10 +60,11 @@ const { data } = toRefs(props);
 
       .gauge {
         position: absolute;
-        width: 70%;
         height: 12px;
         background-color: $color-green-000;
         border-radius: 10px;
+        animation-name: fill;
+        animation-duration: 1s;
       }
     }
   }
