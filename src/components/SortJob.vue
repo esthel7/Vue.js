@@ -2,7 +2,7 @@
   <section class="sort-job" v-if="sortBy">
     <div class="sort-job_title">📌{{ sort }}</div>
     <div class="sort-job_container">
-      <CandidateBadge v-for="data in sortBy" :data="data" />
+      <CandidateBadge v-for="data in sortBy" :data="data" :loc="'jobs'" />
     </div>
   </section>
 </template>
@@ -40,6 +40,7 @@ const sortBy: Array<Candidate> =
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 20px;
+    padding-bottom: 20px;
 
     @media (max-width: 1000px) {
       grid-template-columns: repeat(4, 1fr);
