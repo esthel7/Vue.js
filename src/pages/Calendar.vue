@@ -54,7 +54,11 @@
       <div class="calendar_person">
         <div>🧑‍💻 Candidate</div>
         <div class="calendar_person_badges">
-          <CandidateBadge v-for="data in selectedCandidate" :data="data" />
+          <CandidateBadge
+            v-for="data in selectedCandidate"
+            :data="data"
+            :loc="'calendar'"
+          />
         </div>
       </div>
     </section>

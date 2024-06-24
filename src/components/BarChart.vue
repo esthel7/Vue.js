@@ -26,7 +26,7 @@ const { data } = toRefs(props);
 </script>
 
 <style lang="scss" scoped>
-@keyframes fill {
+@keyframes Fill {
   0% {
     width: 0;
   }
@@ -63,7 +63,7 @@ const { data } = toRefs(props);
         height: 12px;
         background-color: $color-green-000;
         border-radius: 10px;
-        animation-name: fill;
+        animation-name: Fill;
         animation-duration: 1s;
       }
     }
