@@ -19,10 +19,17 @@
 |단방향 데이터 바인딩|양방향 데이터 바인딩으로, 변경사항 바로 적용 및 자식에서 부모로 데이터 전송 가능|
 
 ### ✅반응형 구현으로 웹, 모바일 모두 이질감 없이 사용 가능
+
+### ✅애니메이션으로 부드러운 사용감 제공
+<div align='center'>
+  <img src='https://github.com/esthel7/vue.js/assets/96722691/120320cc-9533-4681-9845-206e95ec1a65' />
+  <img src='https://github.com/esthel7/vue.js/assets/96722691/47e97074-3799-4801-aefa-5e1441775ff2' />
+  <img src='https://github.com/esthel7/vue.js/assets/96722691/1373cd0e-3b94-4b0b-a189-98220c0ff0e0' />
+  <img src='https://github.com/esthel7/vue.js/assets/96722691/ba7d6544-2c6c-49ae-baf9-f45d5407d156' />
+</div>
 <br /><br />
 
 ## 1️⃣ Dashboard
-
 <div align='center'>
   <img src='https://github.com/esthel7/vue.js/assets/96722691/1364b622-9c83-48cb-931c-445ef5fe93a1' />
   <img src='https://github.com/esthel7/vue.js/assets/96722691/48286345-2190-4618-939f-3e91e0a3c2c7' />
