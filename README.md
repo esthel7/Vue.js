@@ -24,27 +24,35 @@
 ## 1️⃣ Dashboard
 
 <div align='center'>
-  <img src='https://github.com/esthel7/vue.js/assets/96722691/0e513230-062a-49c9-bba8-7de118ba5225' />
-  <img src='https://github.com/esthel7/vue.js/assets/96722691/387a61d8-fbe8-4307-b990-a8428e251c77' />
+  <img src='https://github.com/esthel7/vue.js/assets/96722691/1364b622-9c83-48cb-931c-445ef5fe93a1' />
+  <img src='https://github.com/esthel7/vue.js/assets/96722691/48286345-2190-4618-939f-3e91e0a3c2c7' />
   <img src='https://github.com/esthel7/vue.js/assets/96722691/57c1031d-6182-4a21-923b-82d9bf278763' />
 </div>
 <br />
 
-## 2️⃣ Calendar
+## 2️⃣ Jobs
 
 <div align='center'>
-  <img src="https://github.com/esthel7/vue.js/assets/96722691/dadf18e2-3ead-4a02-ba04-ef34cfae1493" />
-  <img src="https://github.com/esthel7/vue.js/assets/96722691/d75fe858-9ecc-4cc6-b66b-0afce1046f42" />
-  <img src="https://github.com/esthel7/vue.js/assets/96722691/65a16977-84df-4b2b-9b88-d8955fc3ce4a" />
-</div>
-<br />
-
-## 3️⃣ Jobs
-
-<div align='center'>
-  <img src="https://github.com/esthel7/vue.js/assets/96722691/e42afa20-7d96-4447-aba4-acbf62636296" />
-  <img src="https://github.com/esthel7/vue.js/assets/96722691/ae4e9e88-8de5-45a1-bb7e-d2bd37c039fd" />
+  <img src="https://github.com/esthel7/vue.js/assets/96722691/1dfc66b7-77ee-486b-a0dc-3147b9326989" />
+  <img src="https://github.com/esthel7/vue.js/assets/96722691/24e5f13e-068e-4af9-ac2b-13aece7e6560" />
   <img src="https://github.com/esthel7/vue.js/assets/96722691/cf3d4b56-c2f2-406e-a50b-8cacc506245d" />
 </div>
 <br />
 
+## 3️⃣ Reference
+
+<div align='center'>
+  <img src="https://github.com/esthel7/vue.js/assets/96722691/57c4b4fc-ad5f-4474-a31a-93f0a64e13ef" />
+  <img src="https://github.com/esthel7/vue.js/assets/96722691/b85f04b3-8aab-4d14-949b-cfbbf9e9ee59" />
+  <img src="https://github.com/esthel7/vue.js/assets/96722691/51825518-9846-41cc-9c64-203f2875ad9c" />
+</div>
+<br />
+
+## 4️⃣ Calendar
+
+<div align='center'>
+  <img src="https://github.com/esthel7/vue.js/assets/96722691/209e9721-92ce-47bd-956b-d5ee39422f9f" />
+  <img src="https://github.com/esthel7/vue.js/assets/96722691/b0c073bd-423f-462d-947a-252311291577" />
+  <img src="https://github.com/esthel7/vue.js/assets/96722691/65a16977-84df-4b2b-9b88-d8955fc3ce4a" />
+</div>
+<br />
