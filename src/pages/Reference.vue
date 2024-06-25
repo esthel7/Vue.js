@@ -73,7 +73,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 import BasicLayout from '@components/BasicLayout.vue';
 import CandidateReference from '@components/CandidateReference.vue';
 import { Candidate, candidate, roles } from '@constants';
@@ -100,6 +100,20 @@ const sortBy = ref<Array<Candidate>>(
 
 const open = (flag: 'money' | 'roles' | 'skill' | 'done') => {
   if (flag === 'done') {
+    sortBy.value = candidate
+      .filter(item =>
+        Money.value !== 'Money'
+          ? item.reference <= Number(Money.value)
+          : item.reference <= Max
+      )
+      .filter(item =>
+        Roles.value !== 'Roles' ? item.userRole === Roles.value : true
+      )
+      .filter(item =>
+        Skill.value !== 'Skill' ? item.userSkill === Skill.value : true
+      )
+      .sort((a, b) => b.reference - a.reference);
+
     moneyRef.value = false;
     rolesRef.value = false;
     skillRef.value = false;
@@ -127,6 +141,10 @@ const checkEmoji = () => {
 
 onMounted(() => {
   window.addEventListener('resize', checkEmoji);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('resize', checkEmoji);
 });
 </script>
 
