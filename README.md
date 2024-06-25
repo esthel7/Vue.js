@@ -27,6 +27,11 @@
   <img src='https://github.com/esthel7/vue.js/assets/96722691/1373cd0e-3b94-4b0b-a189-98220c0ff0e0' />
   <img src='https://github.com/esthel7/vue.js/assets/96722691/ba7d6544-2c6c-49ae-baf9-f45d5407d156' />
 </div>
+
+### ✅meta tag로 전송 시 미리보기 구성
+<div align='center'>
+  <img src='https://github.com/esthel7/vue.js/assets/96722691/afcad893-a6f1-4b21-a102-453e54c6baee' />
+</div>
 <br /><br />
 
 ## 1️⃣ Dashboard
