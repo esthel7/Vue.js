@@ -61,7 +61,7 @@ const { data } = toRefs(props);
       .gauge {
         position: absolute;
         height: 12px;
-        background-color: $color-green-000;
+        background-color: $color-green-100;
         border-radius: 10px;
         animation-name: Fill;
         animation-duration: 1s;
