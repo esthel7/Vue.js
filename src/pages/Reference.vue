@@ -157,6 +157,7 @@ const checkEmoji = () => {
 };
 
 onMounted(() => {
+  checkEmoji();
   window.addEventListener('resize', checkEmoji);
 });
 
