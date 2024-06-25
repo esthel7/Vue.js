@@ -12,9 +12,9 @@
             <div
               v-for="item in sortMoney"
               class="reference_sort_items_body_select green"
-              @click="change('money', String(item))"
+              @click="change('money', item)"
             >
-              $ {{ item }}
+              {{ item }}
             </div>
           </div>
         </div>
@@ -27,7 +27,7 @@
           </div>
           <div v-if="rolesRef" class="reference_sort_items_body">
             <div
-              v-for="item in roles"
+              v-for="item in sortRoles"
               class="reference_sort_items_body_select"
               @click="change('roles', item)"
             >
@@ -88,8 +88,16 @@ const skillRef = ref(false);
 const emojiView = ref(false);
 
 const Max = 500000;
-const sortMoney = [100000, 200000, 300000, 400000, 500000];
-const sortSkill = ['Junior', 'Senior'];
+const sortMoney = [
+  'Default',
+  '$ 100000',
+  '$ 200000',
+  '$ 300000',
+  '$ 400000',
+  '$ 500000'
+];
+const sortRoles = ['Default'].concat(roles);
+const sortSkill = ['Default', 'Junior', 'Senior'];
 const ChangeWidth = 500;
 
 const sortBy = ref<Array<Candidate>>(
@@ -103,7 +111,7 @@ const open = (flag: 'money' | 'roles' | 'skill' | 'done') => {
     sortBy.value = candidate
       .filter(item =>
         Money.value !== 'Money'
-          ? item.reference <= Number(Money.value)
+          ? item.reference <= Number(Money.value.substring(2))
           : item.reference <= Max
       )
       .filter(item =>
@@ -128,6 +136,15 @@ const open = (flag: 'money' | 'roles' | 'skill' | 'done') => {
 };
 
 const change = (flag: 'money' | 'roles' | 'skill', text: string) => {
+  if (text === 'Default') {
+    flag === 'money'
+      ? (Money.value = 'Money')
+      : flag === 'roles'
+        ? (Roles.value = 'Roles')
+        : (Skill.value = 'Skill');
+    return;
+  }
+
   flag === 'money'
     ? (Money.value = text)
     : flag === 'roles'
@@ -239,6 +256,10 @@ onUnmounted(() => {
           &.orange {
             background-color: $color-orange-000;
           }
+        }
+
+        :first-child {
+          background-color: white;
         }
       }
     }
