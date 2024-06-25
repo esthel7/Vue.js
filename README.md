@@ -29,7 +29,13 @@
   <img src='https://github.com/esthel7/vue.js/assets/96722691/afcad893-a6f1-4b21-a102-453e54c6baee' />
 </div>
 
-### ✅반응형 구현으로 웹, 모바일 모두 이질감 없이 사용 가능
+### 🚨트러블슈팅 기록
+- [💡vite에서 이미지 경로 사용하기](https://esthel.notion.site/vite-57a9741374c944d9bd34dd0cbdc0ad31?pvs=4)
+- [💡순환 의존 에러](https://esthel.notion.site/e88c17fa3ca445e5a31dd841c7923f38?pvs=4)
+- [💡스타일 태그 오류](https://esthel.notion.site/1bc8b641912c48aa929d4c0be07e066f?pvs=4)
+- [💡ref 사용하기](https://esthel.notion.site/ref-59f812e9e62849d7b78e7cf78b3c5f60?pvs=4)
+
+### 👍반응형 구현으로 웹, 모바일 모두 이질감 없이 사용 가능
 
 ## 1️⃣ Dashboard
 <div align='center'>
