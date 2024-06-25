@@ -5,22 +5,18 @@
 ```
 
 ## 🖥️ https://vue-esthel.vercel.app
-
-<br />
-
-[📝Vue.js 사용기](https://esthel.notion.site/Vue-js-feat-vite-a76ca599a0ea4a72a067bfb0c151ace2?pvs=4)
 <br />
 
 ### ✅`Vue.js 3`, `React` 비교
-
+[📝Vue.js 사용기](https://esthel.notion.site/Vue-js-feat-vite-a76ca599a0ea4a72a067bfb0c151ace2?pvs=4)
+<br />
 |React|Vue.js|
 |--|--|
 |라이브러리로 사용 주체가 개발자|프레임워크로 프레임워크 내의 규칙을 따르면서 사용|
 |단방향 데이터 바인딩|양방향 데이터 바인딩으로, 변경사항 바로 적용 및 자식에서 부모로 데이터 전송 가능|
 
-### ✅반응형 구현으로 웹, 모바일 모두 이질감 없이 사용 가능
-
 ### ✅애니메이션으로 부드러운 사용감 제공
+[📝애니메이션 적용하기](https://esthel.notion.site/e9854590396742e59fa131c75054533e?pvs=4)
 <div align='center'>
   <img src='https://github.com/esthel7/vue.js/assets/96722691/120320cc-9533-4681-9845-206e95ec1a65' />
   <img src='https://github.com/esthel7/vue.js/assets/96722691/47e97074-3799-4801-aefa-5e1441775ff2' />
@@ -32,7 +28,8 @@
 <div align='center'>
   <img src='https://github.com/esthel7/vue.js/assets/96722691/afcad893-a6f1-4b21-a102-453e54c6baee' />
 </div>
-<br /><br />
+
+### ✅반응형 구현으로 웹, 모바일 모두 이질감 없이 사용 가능
 
 ## 1️⃣ Dashboard
 <div align='center'>
