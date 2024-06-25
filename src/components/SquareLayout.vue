@@ -16,6 +16,18 @@ const { theme } = toRefs(props);
 </script>
 
 <style lang="scss" scoped>
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  }
+
+  100% {
+    opacity: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
 .square-layout {
   @include flex-center;
   background-color: $color-white-000;
@@ -55,6 +67,8 @@ const { theme } = toRefs(props);
   &[layout-theme='candidateReference'] {
     padding: 20px;
     border: 3px solid $color-gray-700;
+    animation-name: FadeIn;
+    animation-duration: 1s;
   }
 }
 </style>
