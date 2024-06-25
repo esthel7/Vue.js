@@ -85,14 +85,6 @@ const menu = [
     label: 'Dashboard'
   },
   {
-    icon: 'Index',
-    label: 'Index'
-  },
-  {
-    icon: 'Calendar',
-    label: 'Calendar'
-  },
-  {
     icon: 'Jobs',
     label: 'Jobs'
   },
@@ -101,30 +93,38 @@ const menu = [
     label: 'Reference'
   },
   {
-    icon: 'Document',
-    label: 'Document'
-  },
-  {
-    icon: 'CareerSite',
-    label: 'CareerSite'
-  },
-  {
-    icon: 'Employee',
-    label: 'Employee'
-  },
-  {
-    icon: 'Structure',
-    label: 'Structure'
-  },
-  {
-    icon: 'Settings',
-    label: 'Settings'
+    icon: 'Calendar',
+    label: 'Calendar'
   }
+  // {
+  //   icon: 'Index',
+  //   label: 'Index'
+  // },
+  // {
+  //   icon: 'Document',
+  //   label: 'Document'
+  // },
+  // {
+  //   icon: 'CareerSite',
+  //   label: 'CareerSite'
+  // },
+  // {
+  //   icon: 'Employee',
+  //   label: 'Employee'
+  // },
+  // {
+  //   icon: 'Structure',
+  //   label: 'Structure'
+  // },
+  // {
+  //   icon: 'Settings',
+  //   label: 'Settings'
+  // }
 ];
 
-const topMenu = computed(() => menu.slice(0, 3));
-const middleMenu = computed(() => menu.slice(3, 7));
-const bottomMenu = computed(() => menu.slice(7, menu.length));
+const topMenu = computed(() => menu.slice(0, 1));
+const middleMenu = computed(() => menu.slice(1, 3));
+const bottomMenu = computed(() => menu.slice(3, menu.length));
 const BasicView = ref(false);
 const RecruitmentView = ref(false);
 const OrganizationView = ref(false);
